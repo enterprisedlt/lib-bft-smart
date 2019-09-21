@@ -28,6 +28,5 @@ dependencies {
 repositories {
     mavenLocal()
     mavenCentral()
-    maven { url 'http://kompics.sics.se/maven/repository/' } // for Yahoo Core
     jcenter()
 }

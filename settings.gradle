@@ -1,1 +1,4 @@
 rootProject.name = 'lib-bft-smart'
+
+include ':bftsmart'
+include ':demo'

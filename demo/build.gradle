@@ -1,0 +1,21 @@
+plugins {
+    id 'scala'
+    id "com.github.johnrengelman.shadow" version "4.0.1"
+}
+
+dependencies {
+    compile project(':bftsmart')
+    compile 'com.yahoo.ycsb:core:0.1.4'
+
+    
+    // testing libraries
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.scalatest:scalatest_2.12:3.0.5'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url 'http://kompics.sics.se/maven/repository/' } // for Yahoo Core
+    jcenter()
+}

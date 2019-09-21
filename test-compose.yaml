@@ -1,0 +1,70 @@
+version: '2'
+
+networks:
+  bft_test:
+
+services:
+  bft.node.0:
+    container_name: bft.node.0
+    image: openjdk:8-jre
+    tty: true
+    working_dir: /opt/bft-node
+    volumes:
+      - ./build/libs:/opt/bft-node/libs
+      - ./runscripts:/opt/bft-node/bin
+      - ./config:/opt/bft-node/config
+    command: /opt/bft-node/bin/dr.sh bftsmart.demo.counter.CounterServer 0
+    networks:
+      - bft_test
+
+  bft.node.1:
+    container_name: bft.node.1
+    image: openjdk:8-jre
+    tty: true
+    working_dir: /opt/bft-node
+    volumes:
+      - ./build/libs:/opt/bft-node/libs
+      - ./runscripts:/opt/bft-node/bin
+      - ./config:/opt/bft-node/config
+    command: /opt/bft-node/bin/dr.sh bftsmart.demo.counter.CounterServer 1
+    networks:
+      - bft_test
+
+  bft.node.2:
+    container_name: bft.node.2
+    image: openjdk:8-jre
+    tty: true
+    working_dir: /opt/bft-node
+    volumes:
+      - ./build/libs:/opt/bft-node/libs
+      - ./runscripts:/opt/bft-node/bin
+      - ./config:/opt/bft-node/config
+    command: /opt/bft-node/bin/dr.sh bftsmart.demo.counter.CounterServer 2
+    networks:
+      - bft_test
+
+  bft.node.3:
+    container_name: bft.node.3
+    image: openjdk:8-jre
+    tty: true
+    working_dir: /opt/bft-node
+    volumes:
+      - ./build/libs:/opt/bft-node/libs
+      - ./runscripts:/opt/bft-node/bin
+      - ./config:/opt/bft-node/config
+    command: /opt/bft-node/bin/dr.sh bftsmart.demo.counter.CounterServer 3
+    networks:
+      - bft_test
+
+  bft.client:
+    container_name: bft.client
+    image: openjdk:8-jre
+    tty: true
+    working_dir: /opt/bft-node
+    volumes:
+      - ./build/libs:/opt/bft-node/libs
+      - ./runscripts:/opt/bft-node/bin
+      - ./config:/opt/bft-node/config
+    command: /bin/bash
+    networks:
+      - bft_test

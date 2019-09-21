@@ -1,6 +1,5 @@
 .gradle
 .idea
-bin/bftsmart
 config/currentView
 test
 

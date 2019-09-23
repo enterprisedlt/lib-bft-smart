@@ -19,3 +19,13 @@ repositories {
     maven { url 'http://kompics.sics.se/maven/repository/' } // for Yahoo Core
     jcenter()
 }
+
+shadowJar {
+    baseName = 'bft-smart-fat'
+    version = null
+    classifier = null
+
+//    manifest {
+//        attributes 'Main-Class': 'network.fabric.Main'
+//    }
+}
